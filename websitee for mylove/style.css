@@ -1,0 +1,188 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff6f9; /* pastel pink muda */
+  color: #444;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 🌸 Opening */
+.opening {
+  background: linear-gradient(135deg, #ffe6eb, #fff6f9);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.opening-content h1 {
+  font-size: 2.5em;
+  color: #ff6699;
+}
+
+.opening-content p {
+  margin: 10px 0 20px;
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* 🌷 Hero Section */
+.hero {
+  background: linear-gradient(135deg, #ffe5ec, #fff6f9);
+  text-align: center;
+  padding: 80px 20px;
+  color: #5a3e42;
+}
+
+.hero h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.1em;
+  opacity: 0.8;
+}
+
+/* 🌼 Tombol */
+button {
+  background-color: #ffb6c1;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px 25px;
+  margin-top: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 3px 8px rgba(255, 182, 193, 0.4);
+}
+
+button:hover {
+  background-color: #ff91a4;
+  transform: scale(1.05);
+}
+
+/* 💌 Section Surat */
+.letter {
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 30px auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+  line-height: 1.6;
+}
+
+/* 📸 Galeri Foto */
+.gallery {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.gallery h2 {
+  color: #ff6699;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 18px;
+  justify-items: center;
+}
+
+.photo-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(255, 182, 193, 0.25);
+  overflow: hidden;
+  width: 100%;
+  max-width: 160px;
+  transition: all 0.3s ease;
+}
+
+.photo-card:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+.photo-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(255, 182, 193, 0.25);
+  overflow: hidden;
+  width: 100%;
+  max-width: 120px; /* dari 160px jadi 120px */
+  transition: all 0.3s ease;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 90px; /* dari 120px jadi 90px */
+  object-fit: cover;
+  border-bottom: 2px solid #ffe5ec;
+}
+/* 💖 Pesan */
+.ending {
+  background-color: #ffeaf1;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.ending h2 {
+  color: #ff6699;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+textarea {
+  width: 80%;
+  max-width: 500px;
+  height: 100px;
+  border-radius: 10px;
+  border: 2px solid #ffb6c1;
+  padding: 10px;
+  font-size: 1em;
+  outline: none;
+  resize: none;
+  background-color: #fffafc;
+  transition: 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #ff91a4;
+  box-shadow: 0 0 5px rgba(255, 145, 164, 0.5);
+}
+
+#noteArea {
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: #555;
+  padding: 10px;
+}
+
+/* ✨ Efek fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌙 Footer */
+.footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+  color: #777;
+  background-color: #fff0f5;
+}

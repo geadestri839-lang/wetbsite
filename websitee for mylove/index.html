@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For ma bebee ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* === Opening screen === */
+    #opening {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, #ffeaf4, #fff9fb);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 9999;
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    #opening h1, #opening p {
+      color: #444;
+      margin: 10px;
+      animation: fadeInText 1.5s ease;
+    }
+
+    #opening button {
+      background-color: #ff8fab;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 1.1em;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    #opening button:hover {
+      background-color: #ff7096;
+      transform: scale(1.05);
+    }
+
+    #opening.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* Sembunyiin isi utama dulu */
+    #mainContent.hidden {
+      display: none;
+    }
+
+    @keyframes fadeInText {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Opening Screen -->
+  <div id="opening">
+    <h1 class="fade-text">Hi, my love 💕</h1>
+    <p class="fade-text">Before you see this page... click the button below 😚</p>
+    <button id="startBtn">Click to start 💖</button>
+  </div>
+
+  <!-- Main Content -->
+  <div id="mainContent" class="hidden">
+    <header class="hero">
+      <div class="hero-content">
+        <h1>For ma bebee 💖</h1>
+        <p>Website kecil ini kuhadirkan buat kamu — baca pelan, senyum, dan rasakan deh :)</p>
+
+        <div class="music-controls">
+          <audio id="bg-music" src="spark.mp3" loop></audio>
+          <button id="playBtn">Play 🎵</button>
+          <button id="pauseBtn">Pause ⏸️</button>
+          <label for="volumeRange">Volume</label>
+          <input id="volumeRange" type="range" min="0" max="1" step="0.01" value="0.5" />
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="letter fade-in">
+        <h2>Surat Untukmu</h2>
+        <p>
+          sometimes I still can’t believe how lucky I am to have you in my life.
+          Dari sekian banyak orang yang datang dan pergi, kamu yang tetap tinggal — 
+          bukan cuma di hari-hari baik, tapi juga di saat aku susah banget buat dimengerti.<br><br>
+
+          You have no idea how much you mean to me.
+          Kamu itu bukan cuma seseorang yang aku sayang, tapi juga tempat aku pulang — 
+          dalam bentuk manusia. Kadang aku pikir, mungkin Tuhan nyiptain kamu emang buat bikin aku ngerasa tenang,
+          even when the world feels too loud.<br><br>
+
+          Aku tahu, hubungan kita nggak selalu sempurna. Ada hari di mana kita salah paham, 
+          ada waktu di mana aku terlalu keras kepala. But still, no matter how rough the day gets, 
+          I never stop choosing you. Always you.<br><br>
+
+          Thank you for every little thing — buat setiap chat random kamu, buat tawa yang tiba-tiba, 
+          buat perhatian kecil yang kadang nggak kamu sadari. You make the simplest things feel special.<br><br>
+
+          Aku nggak janji segalanya bakal selalu mudah, tapi aku janji akan selalu berusaha — 
+          buat jaga kamu, buat ngerti kamu, dan buat tumbuh bareng kamu. Because at the end of the day, it’s you.
+          It’s always been you.<br><br>
+
+          So, no matter what happens next, please remember: I’m here. I choose you — today, tomorrow, 
+          and for as long as we’re still lucky enough to find each other in this world. 💗
+        </p>
+      </section>
+
+      <<section class="gallery fade-in">
+  <h2> Things make me lovee uuu</h2>
+  <div class="photo-grid">
+    <div class="photo-card">
+      <img src="bebe.img.jpg" alt="mammmwaaaachhh" />
+      <p>ofkors gantengg dongg </p>
+    </div>
+
+    <div class="photo-card">
+      <img src="senyum.img.jpg" alt="ur smile">
+      <p>Your smile</p>
+    </div>
+
+    <div class="photo-card">
+      <img src="chat.img.jpg" alt="our late night talks">
+      <p>Our late night talks 💬</p>
+    </div>
+
+    <div class="photo-card">
+      <img src="swit.img.jpg" alt="HAHA everytime">
+      <p>HAHA everytime 😂</p>
+    </div>
+  </div>
+</section>
+
+      <section class="ending fade-in">
+        <h2>P.S.</h2>
+        <p>Ketik pesan manismu di bawah lalu klik "Kirim" — nanti tampil di layar untuk dia baca.</p>
+        <textarea id="noteInput" placeholder="KIRIM PESANN UNTUK AKUUU"></textarea>
+        <button id="sendNote">Kirim</button>
+        <div id="noteArea" class="note-area"></div>
+      </section>
+    </main>
+
+    <footer class="footer fade-in">
+      <p>Made with ❤️ just for you.</p>
+    </footer>
+  </div>
+
+  <script>
+  // === Opening animation ===
+  const startBtn = document.getElementById('startBtn');
+  const opening = document.getElementById('opening');
+  const mainContent = document.getElementById('mainContent');
+  const bgMusic = document.getElementById('bg-music');
+
+  startBtn.addEventListener('click', () => {
+    opening.classList.add('fade-out');
+    setTimeout(() => {
+      opening.style.display = 'none';
+      mainContent.classList.remove('hidden');
+      bgMusic.play();
+      document.body.style.overflow = 'auto';
+    }, 1000);
+  });
+
+  // === Fade-in on scroll ===
+  const fadeElements = document.querySelectorAll('.fade-in');
+  window.addEventListener('scroll', () => {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('visible');
+      }
+    });
+  });
+
+  // === Music control ===
+  const playBtn = document.getElementById('playBtn');
+  const pauseBtn = document.getElementById('pauseBtn');
+  const volumeRange = document.getElementById('volumeRange');
+
+  playBtn.addEventListener('click', () => bgMusic.play());
+  pauseBtn.addEventListener('click', () => bgMusic.pause());
+  volumeRange.addEventListener('input', () => {
+    bgMusic.volume = volumeRange.value;
+  });
+
+  // === Notes ===
+  const sendNote = document.getElementById('sendNote');
+  const noteInput = document.getElementById('noteInput');
+  const noteArea = document.getElementById('noteArea');
+
+  sendNote.addEventListener('click', () => {
+    const text = noteInput.value.trim();
+    if (text !== '') {
+      const p = document.createElement('p');
+      p.textContent = text;
+      p.classList.add('note-message');
+      noteArea.appendChild(p);
+      noteInput.value = '';
+    }
+  });
+  </script>
+
+</body>
+</html>
